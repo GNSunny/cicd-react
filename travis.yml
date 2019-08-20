@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sunnynehar56/cicd-react -f Dockerfile.dev .
+
+script:
+  - docker run sunnynehar56/cicd-react npm run test -- --coverage
