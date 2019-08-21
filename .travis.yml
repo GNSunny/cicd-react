@@ -6,7 +6,8 @@ before_install:
   - docker build -t sunnynehar56/cicd-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true sunnynehar56/cicd-react npm run test -- --coverage
+  - docker run -e CI=true sunnynehar56/cicd-react npm run test 
+  # -- --coverage flag on above command is used  only for testing stage
 
 deploy:
   provider: elasticbeanstalk
